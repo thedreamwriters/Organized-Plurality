@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organized Plurality", "Organized Plurality\Organized Plurality.csproj", "{F0B44E60-4966-4DEA-9BAA-F5F21F4DEBC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0B44E60-4966-4DEA-9BAA-F5F21F4DEBC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B44E60-4966-4DEA-9BAA-F5F21F4DEBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B44E60-4966-4DEA-9BAA-F5F21F4DEBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B44E60-4966-4DEA-9BAA-F5F21F4DEBC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {320BB2E1-AC8E-4D85-AD6E-E6F3DE36AFE3}
+	EndGlobalSection
+EndGlobal

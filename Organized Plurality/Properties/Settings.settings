@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Organized_Plurality.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SecondaryColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">94, 148, 255</Value>
+    </Setting>
+    <Setting Name="MainColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">RoyalBlue</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

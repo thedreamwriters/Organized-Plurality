@@ -1,0 +1,22 @@
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Organized Plurality.exe.config
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Organized Plurality.exe
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Organized Plurality.pdb
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized Plurality.csprojAssemblyReference.cache
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized_Plurality.Properties.Resources.resources
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized Plurality.csproj.GenerateResource.cache
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized Plurality.csproj.CoreCompileInputs.cache
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized Plurality.csproj.CopyComplete
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized Plurality.exe
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized Plurality.pdb
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Guna.UI2.dll
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized_Plurality.menuForm.resources
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized_Plurality.notesForm.resources
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized_Plurality.settingsForm.resources
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Organized Plurality.exe.manifest
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Organized Plurality.application
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized Plurality.exe.manifest
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized Plurality.application
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Cyotek.Windows.Forms.ColorPicker.dll
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Cyotek.Windows.Forms.ColorPicker.xml
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\H.MaterialSkin.dll
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\H.MaterialSkin.xml
