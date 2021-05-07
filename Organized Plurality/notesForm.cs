@@ -19,12 +19,6 @@ namespace Organized_Plurality
             InitializeComponent();
         }
 
-        private void notesForm_Load(object sender, EventArgs e)
-        {
-            funcLoadNotes();
-            listNotesMenu.BackColor = Control.DefaultBackColor;
-            
-        }
         void funcLoadNotes()
         {
             DirectoryInfo directory = new DirectoryInfo(datapath);
@@ -56,7 +50,7 @@ namespace Organized_Plurality
 
                 if ((File.Exists(SelectedNotePath)))
                 {
-                    DialogResult DeleteConfirmation = MessageBox.Show("You are about to delete " + listNotesMenu.SelectedItems[0].Text + ", would you like to proceed?", "Note removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult DeleteConfirmation = MessageBox.Show("You are about to delete " + listNotesMenu.SelectedItems[0].Text + ", would you like to proceed?", "Note Removal - Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (DeleteConfirmation == DialogResult.Yes)
                     {
                         File.Delete(SelectedNotePath);
@@ -65,6 +59,47 @@ namespace Organized_Plurality
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Make sure to select a note before attempting to delete", "Note Removal - Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        void funcClearDesigner()
+        {
+            txtFronter.Clear();
+            txtTitle.Clear();
+        }
+
+        void funcFetchNoteContent()
+        {
+            var SelectedNotePath = datapath + listNotesMenu.SelectedItems[0].Text + ".op";
+
+            if (File.Exists(SelectedNotePath))
+            {
+                txtNoteContent.Lines = File.ReadAllLines(SelectedNotePath);
+            }
+        }
+
+        void funcSaveNote()
+        {
+            if (listNotesMenu.SelectedItems.Count != 0)
+            {
+                var SelectedNotePath = datapath + listNotesMenu.SelectedItems[0].Text + ".op";
+
+                File.Delete(SelectedNotePath);
+                File.AppendAllLines(datapath + listNotesMenu.SelectedItems[0].Text + ".op", txtNoteContent.Lines);
+            }
+            else
+            {
+                MessageBox.Show("Make sure to select a note before attempting to save", "Note Save - Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
+        }
+        private void notesForm_Load(object sender, EventArgs e)
+        {
+            funcLoadNotes();
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -88,31 +123,23 @@ namespace Organized_Plurality
         private void btnDesignerClose_Click(object sender, EventArgs e)
         {
             designerForm.Visible = false;
-            txtFronter.Clear();
-            txtTitle.Clear();
+            funcClearDesigner();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            funcCreateNote();
-        }
-
-        private void listNotesMenu_ItemActivate(object sender, EventArgs e)
-        {
-            var SelectedNotePath = datapath + listNotesMenu.SelectedItems[0].Text + ".op";
-
-            if (File.Exists(SelectedNotePath))
+            if (!(txtFronter.Text == "" || txtTitle.Text == ""))
             {
-                txtNoteContent.Lines = File.ReadAllLines(SelectedNotePath);
+                funcCreateNote();
+            }
+            else
+            {
+                MessageBox.Show("Both fields must be filled before creating a note", "Note Creation - Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void btnSaveNote_Click(object sender, EventArgs e)
         {
-            var SelectedNotePath = datapath + listNotesMenu.SelectedItems[0].Text + ".op";
-
-            File.Delete(SelectedNotePath);
-            File.AppendAllLines(datapath + listNotesMenu.SelectedItems[0].Text + ".op", txtNoteContent.Lines);
+            funcSaveNote();
         }
 
         private void btnRemoveNote_Click(object sender, EventArgs e)
@@ -126,6 +153,11 @@ namespace Organized_Plurality
             {
                 funcRemoveNote();
             }
+        }
+
+        private void listNotesMenu_ItemActivate(object sender, EventArgs e)
+        {
+            funcFetchNoteContent();
         }
     }
 }

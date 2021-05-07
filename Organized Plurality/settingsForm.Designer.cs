@@ -30,6 +30,7 @@ namespace Organized_Plurality
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(settingsForm));
             this.animForm = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
             this.picSeconColorSelector = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -201,9 +202,10 @@ namespace Organized_Plurality
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlCtrlBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "settingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "settingsForm";
+            this.Text = "OP - Settings";
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSeconColorSelector)).EndInit();

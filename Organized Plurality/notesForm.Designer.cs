@@ -30,6 +30,7 @@ namespace Organized_Plurality
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(notesForm));
             this.animForm = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.txtNoteContent = new Guna.UI2.WinForms.Guna2TextBox();
             this.designerForm = new Guna.UI2.WinForms.Guna2Panel();
@@ -40,14 +41,15 @@ namespace Organized_Plurality
             this.lblFronter = new System.Windows.Forms.Label();
             this.pnlCtrlBoxDesigner = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnDesignerClose = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.listNotesMenu = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlCtrlBox = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.btnRemoveNote = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnSaveNote = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnAddNote = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnMin = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnClose = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.listNotesMenu = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnSaveNote = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnRemoveNote = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.dragForm = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.designerForm.SuspendLayout();
             this.pnlCtrlBoxDesigner.SuspendLayout();
             this.pnlCtrlBox.SuspendLayout();
@@ -226,6 +228,41 @@ namespace Organized_Plurality
             this.btnDesignerClose.Text = "X";
             this.btnDesignerClose.Click += new System.EventHandler(this.btnDesignerClose_Click);
             // 
+            // listNotesMenu
+            // 
+            this.listNotesMenu.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.listNotesMenu.AutoSizeTable = false;
+            this.listNotesMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.listNotesMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listNotesMenu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2});
+            this.listNotesMenu.Depth = 0;
+            this.listNotesMenu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.listNotesMenu.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listNotesMenu.FullRowSelect = true;
+            this.listNotesMenu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.listNotesMenu.HideSelection = false;
+            this.listNotesMenu.Location = new System.Drawing.Point(553, 73);
+            this.listNotesMenu.MinimumSize = new System.Drawing.Size(50, 100);
+            this.listNotesMenu.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.listNotesMenu.MouseState = MaterialSkin.MouseState.OUT;
+            this.listNotesMenu.MultiSelect = false;
+            this.listNotesMenu.Name = "listNotesMenu";
+            this.listNotesMenu.OwnerDraw = true;
+            this.listNotesMenu.ShowGroups = false;
+            this.listNotesMenu.Size = new System.Drawing.Size(146, 460);
+            this.listNotesMenu.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listNotesMenu.TabIndex = 5;
+            this.listNotesMenu.UseCompatibleStateImageBehavior = false;
+            this.listNotesMenu.View = System.Windows.Forms.View.Details;
+            this.listNotesMenu.ItemActivate += new System.EventHandler(this.listNotesMenu_ItemActivate);
+            this.listNotesMenu.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listNotesMenu_KeyUp);
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 150;
+            // 
             // pnlCtrlBox
             // 
             this.pnlCtrlBox.BackColor = System.Drawing.Color.Transparent;
@@ -243,6 +280,46 @@ namespace Organized_Plurality
             this.pnlCtrlBox.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
             this.pnlCtrlBox.Size = new System.Drawing.Size(699, 73);
             this.pnlCtrlBox.TabIndex = 1;
+            // 
+            // btnRemoveNote
+            // 
+            this.btnRemoveNote.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRemoveNote.Animated = true;
+            this.btnRemoveNote.CheckedState.Parent = this.btnRemoveNote;
+            this.btnRemoveNote.CustomImages.Parent = this.btnRemoveNote;
+            this.btnRemoveNote.DataBindings.Add(new System.Windows.Forms.Binding("FillColor", global::Organized_Plurality.Properties.Settings.Default, "SecondaryColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnRemoveNote.FillColor = global::Organized_Plurality.Properties.Settings.Default.SecondaryColor;
+            this.btnRemoveNote.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveNote.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveNote.HoverState.Parent = this.btnRemoveNote;
+            this.btnRemoveNote.Location = new System.Drawing.Point(59, 12);
+            this.btnRemoveNote.Name = "btnRemoveNote";
+            this.btnRemoveNote.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnRemoveNote.ShadowDecoration.Parent = this.btnRemoveNote;
+            this.btnRemoveNote.Size = new System.Drawing.Size(41, 38);
+            this.btnRemoveNote.TabIndex = 5;
+            this.btnRemoveNote.Text = "-";
+            this.btnRemoveNote.Click += new System.EventHandler(this.btnRemoveNote_Click);
+            // 
+            // btnSaveNote
+            // 
+            this.btnSaveNote.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSaveNote.Animated = true;
+            this.btnSaveNote.CheckedState.Parent = this.btnSaveNote;
+            this.btnSaveNote.CustomImages.Parent = this.btnSaveNote;
+            this.btnSaveNote.DataBindings.Add(new System.Windows.Forms.Binding("FillColor", global::Organized_Plurality.Properties.Settings.Default, "SecondaryColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnSaveNote.FillColor = global::Organized_Plurality.Properties.Settings.Default.SecondaryColor;
+            this.btnSaveNote.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveNote.ForeColor = System.Drawing.Color.White;
+            this.btnSaveNote.HoverState.Parent = this.btnSaveNote;
+            this.btnSaveNote.Location = new System.Drawing.Point(106, 12);
+            this.btnSaveNote.Name = "btnSaveNote";
+            this.btnSaveNote.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnSaveNote.ShadowDecoration.Parent = this.btnSaveNote;
+            this.btnSaveNote.Size = new System.Drawing.Size(41, 38);
+            this.btnSaveNote.TabIndex = 4;
+            this.btnSaveNote.Text = "💾";
+            this.btnSaveNote.Click += new System.EventHandler(this.btnSaveNote_Click);
             // 
             // btnAddNote
             // 
@@ -303,80 +380,13 @@ namespace Organized_Plurality
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // listNotesMenu
+            // dragForm
             // 
-            this.listNotesMenu.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.listNotesMenu.AutoSizeTable = false;
-            this.listNotesMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.listNotesMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listNotesMenu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2});
-            this.listNotesMenu.Depth = 0;
-            this.listNotesMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.listNotesMenu.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listNotesMenu.FullRowSelect = true;
-            this.listNotesMenu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listNotesMenu.HideSelection = false;
-            this.listNotesMenu.Location = new System.Drawing.Point(553, 73);
-            this.listNotesMenu.MinimumSize = new System.Drawing.Size(50, 100);
-            this.listNotesMenu.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.listNotesMenu.MouseState = MaterialSkin.MouseState.OUT;
-            this.listNotesMenu.MultiSelect = false;
-            this.listNotesMenu.Name = "listNotesMenu";
-            this.listNotesMenu.OwnerDraw = true;
-            this.listNotesMenu.ShowGroups = false;
-            this.listNotesMenu.Size = new System.Drawing.Size(146, 460);
-            this.listNotesMenu.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listNotesMenu.TabIndex = 5;
-            this.listNotesMenu.UseCompatibleStateImageBehavior = false;
-            this.listNotesMenu.View = System.Windows.Forms.View.Details;
-            this.listNotesMenu.ItemActivate += new System.EventHandler(this.listNotesMenu_ItemActivate);
-            this.listNotesMenu.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listNotesMenu_KeyUp);
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 150;
-            // 
-            // btnSaveNote
-            // 
-            this.btnSaveNote.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSaveNote.Animated = true;
-            this.btnSaveNote.CheckedState.Parent = this.btnSaveNote;
-            this.btnSaveNote.CustomImages.Parent = this.btnSaveNote;
-            this.btnSaveNote.DataBindings.Add(new System.Windows.Forms.Binding("FillColor", global::Organized_Plurality.Properties.Settings.Default, "SecondaryColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnSaveNote.FillColor = global::Organized_Plurality.Properties.Settings.Default.SecondaryColor;
-            this.btnSaveNote.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveNote.ForeColor = System.Drawing.Color.White;
-            this.btnSaveNote.HoverState.Parent = this.btnSaveNote;
-            this.btnSaveNote.Location = new System.Drawing.Point(106, 12);
-            this.btnSaveNote.Name = "btnSaveNote";
-            this.btnSaveNote.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnSaveNote.ShadowDecoration.Parent = this.btnSaveNote;
-            this.btnSaveNote.Size = new System.Drawing.Size(41, 38);
-            this.btnSaveNote.TabIndex = 4;
-            this.btnSaveNote.Text = "💾";
-            this.btnSaveNote.Click += new System.EventHandler(this.btnSaveNote_Click);
-            // 
-            // btnRemoveNote
-            // 
-            this.btnRemoveNote.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRemoveNote.Animated = true;
-            this.btnRemoveNote.CheckedState.Parent = this.btnRemoveNote;
-            this.btnRemoveNote.CustomImages.Parent = this.btnRemoveNote;
-            this.btnRemoveNote.DataBindings.Add(new System.Windows.Forms.Binding("FillColor", global::Organized_Plurality.Properties.Settings.Default, "SecondaryColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnRemoveNote.FillColor = global::Organized_Plurality.Properties.Settings.Default.SecondaryColor;
-            this.btnRemoveNote.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveNote.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveNote.HoverState.Parent = this.btnRemoveNote;
-            this.btnRemoveNote.Location = new System.Drawing.Point(59, 12);
-            this.btnRemoveNote.Name = "btnRemoveNote";
-            this.btnRemoveNote.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnRemoveNote.ShadowDecoration.Parent = this.btnRemoveNote;
-            this.btnRemoveNote.Size = new System.Drawing.Size(41, 38);
-            this.btnRemoveNote.TabIndex = 5;
-            this.btnRemoveNote.Text = "-";
-            this.btnRemoveNote.Click += new System.EventHandler(this.btnRemoveNote_Click);
+            this.dragForm.ContainerControl = this;
+            this.dragForm.DragStartTransparencyValue = 0.6D;
+            this.dragForm.TargetControl = this.pnlCtrlBox;
+            this.dragForm.TransparentWhileDrag = true;
+            this.dragForm.UseTransparentDrag = true;
             // 
             // notesForm
             // 
@@ -388,9 +398,10 @@ namespace Organized_Plurality
             this.Controls.Add(this.txtNoteContent);
             this.Controls.Add(this.pnlCtrlBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "notesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "notesForm";
+            this.Text = "OP - Plural Notes";
             this.Load += new System.EventHandler(this.notesForm_Load);
             this.designerForm.ResumeLayout(false);
             this.designerForm.PerformLayout();
@@ -420,5 +431,6 @@ namespace Organized_Plurality
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private Guna.UI2.WinForms.Guna2CircleButton btnSaveNote;
         private Guna.UI2.WinForms.Guna2CircleButton btnRemoveNote;
+        private Guna.UI2.WinForms.Guna2DragControl dragForm;
     }
 }

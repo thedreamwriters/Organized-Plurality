@@ -31,8 +31,10 @@ namespace Organized_Plurality
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menuForm));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Plural Notes"}, 0, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Discord RPC"}, 1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 14.25F));
             this.animForm = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.imagelist = new System.Windows.Forms.ImageList(this.components);
             this.listMenu = new System.Windows.Forms.ListView();
@@ -41,7 +43,6 @@ namespace Organized_Plurality
             this.btnSettings = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnMin = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnClose = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2NotificationPaint1 = new Guna.UI2.WinForms.Guna2NotificationPaint(this.components);
             this.pnlCtrlBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@ namespace Organized_Plurality
             this.imagelist.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imagelist.ImageStream")));
             this.imagelist.TransparentColor = System.Drawing.Color.Transparent;
             this.imagelist.Images.SetKeyName(0, "notes-icon.png");
+            this.imagelist.Images.SetKeyName(1, "rpc-icon.png");
             // 
             // listMenu
             // 
@@ -65,7 +67,8 @@ namespace Organized_Plurality
             this.listMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listMenu.HideSelection = false;
             this.listMenu.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3,
+            listViewItem4});
             this.listMenu.LargeImageList = this.imagelist;
             this.listMenu.Location = new System.Drawing.Point(0, 73);
             this.listMenu.MultiSelect = false;
@@ -156,11 +159,6 @@ namespace Organized_Plurality
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // guna2NotificationPaint1
-            // 
-            this.guna2NotificationPaint1.TargetControl = this;
-            this.guna2NotificationPaint1.Text = "hello";
-            // 
             // menuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,9 +167,10 @@ namespace Organized_Plurality
             this.Controls.Add(this.listMenu);
             this.Controls.Add(this.pnlCtrlBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "menuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "OP - Menu";
             this.pnlCtrlBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -187,7 +186,6 @@ namespace Organized_Plurality
         private Guna.UI2.WinForms.Guna2CircleButton btnMin;
         private Guna.UI2.WinForms.Guna2CircleButton btnClose;
         private Guna.UI2.WinForms.Guna2CircleButton btnSettings;
-        private Guna.UI2.WinForms.Guna2NotificationPaint guna2NotificationPaint1;
     }
 }
 

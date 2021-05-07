@@ -17,6 +17,11 @@ namespace Organized_Plurality
             InitializeComponent();
         }
 
+        void funcDeselectItem()
+        {
+            listMenu.SelectedItems[0].Selected = false;
+        }
+
         private void listMenu_ItemActivate(object sender, EventArgs e)
         {
             if (listMenu.SelectedItems[0].Index == 0)
@@ -25,15 +30,27 @@ namespace Organized_Plurality
 
                 if (notesFormAction.Any())
                 {
-                    notesFormAction.First().Focus();
-                    listMenu.SelectedItems.Clear();
+                    if (notesFormAction.First().WindowState == FormWindowState.Minimized)
+                    {
+                        notesFormAction.First().WindowState = FormWindowState.Normal;
+                    }
+                    else
+                    {
+                        notesFormAction.First().Focus();
+                        funcDeselectItem();
+                    }
                 }
                 else
                 {
                     notesForm notesForm = new notesForm();
                     notesForm.Show();
-                    listMenu.SelectedItems.Clear();
+                    funcDeselectItem();
                 }
+            }
+            else if (listMenu.SelectedItems[0].Index == 1)
+            {
+                MessageBox.Show("Coming soon!", "Discord RPC");
+                funcDeselectItem();
             }
         }
 
@@ -43,7 +60,14 @@ namespace Organized_Plurality
 
             if (settingsFormAction.Any())
             {
-                settingsFormAction.First().Focus();
+                if (settingsFormAction.First().WindowState == FormWindowState.Minimized)
+                {
+                    settingsFormAction.First().WindowState = FormWindowState.Normal;
+                }
+                else
+                {
+                    settingsFormAction.First().Focus();
+                }
             }
             else
             {
