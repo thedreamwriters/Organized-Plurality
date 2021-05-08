@@ -31,19 +31,18 @@ namespace Organized_Plurality
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menuForm));
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Plural Notes"}, 0, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Discord RPC"}, 1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 14.25F));
             this.animForm = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.imagelist = new System.Windows.Forms.ImageList(this.components);
-            this.listMenu = new System.Windows.Forms.ListView();
             this.dragForm = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnlCtrlBox = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnSettings = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnMin = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnClose = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnOpenRPC = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOpenNotes = new Guna.UI2.WinForms.Guna2Button();
             this.pnlCtrlBox.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // animForm
@@ -57,26 +56,6 @@ namespace Organized_Plurality
             this.imagelist.TransparentColor = System.Drawing.Color.Transparent;
             this.imagelist.Images.SetKeyName(0, "notes-icon.png");
             this.imagelist.Images.SetKeyName(1, "rpc-icon.png");
-            // 
-            // listMenu
-            // 
-            this.listMenu.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.listMenu.BackColor = System.Drawing.SystemColors.Control;
-            this.listMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listMenu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listMenu.HideSelection = false;
-            this.listMenu.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
-            this.listMenu.LargeImageList = this.imagelist;
-            this.listMenu.Location = new System.Drawing.Point(0, 73);
-            this.listMenu.MultiSelect = false;
-            this.listMenu.Name = "listMenu";
-            this.listMenu.Size = new System.Drawing.Size(555, 433);
-            this.listMenu.TabIndex = 0;
-            this.listMenu.UseCompatibleStateImageBehavior = false;
-            this.listMenu.ItemActivate += new System.EventHandler(this.listMenu_ItemActivate);
             // 
             // dragForm
             // 
@@ -112,7 +91,7 @@ namespace Organized_Plurality
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.HoverState.Parent = this.btnSettings;
-            this.btnSettings.Image = global::Organized_Plurality.Properties.Resources.settings_icon;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageSize = new System.Drawing.Size(30, 30);
             this.btnSettings.Location = new System.Drawing.Point(12, 12);
             this.btnSettings.Name = "btnSettings";
@@ -159,19 +138,71 @@ namespace Organized_Plurality
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnOpenRPC);
+            this.panel1.Controls.Add(this.btnOpenNotes);
+            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(555, 405);
+            this.panel1.TabIndex = 8;
+            // 
+            // btnOpenRPC
+            // 
+            this.btnOpenRPC.Animated = true;
+            this.btnOpenRPC.BackColor = System.Drawing.Color.Transparent;
+            this.btnOpenRPC.CheckedState.Parent = this.btnOpenRPC;
+            this.btnOpenRPC.CustomImages.Parent = this.btnOpenRPC;
+            this.btnOpenRPC.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.btnOpenRPC.ForeColor = System.Drawing.Color.White;
+            this.btnOpenRPC.HoverState.Parent = this.btnOpenRPC;
+            this.btnOpenRPC.Image = global::Organized_Plurality.Properties.Resources.rich_presence_picture;
+            this.btnOpenRPC.ImageSize = new System.Drawing.Size(700, 250);
+            this.btnOpenRPC.Location = new System.Drawing.Point(0, 206);
+            this.btnOpenRPC.Name = "btnOpenRPC";
+            this.btnOpenRPC.ShadowDecoration.Parent = this.btnOpenRPC;
+            this.btnOpenRPC.Size = new System.Drawing.Size(555, 197);
+            this.btnOpenRPC.TabIndex = 1;
+            this.btnOpenRPC.TextFormatNoPrefix = true;
+            this.btnOpenRPC.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.btnOpenRPC.Click += new System.EventHandler(this.btnOpenRPC_Click);
+            // 
+            // btnOpenNotes
+            // 
+            this.btnOpenNotes.Animated = true;
+            this.btnOpenNotes.BackColor = System.Drawing.Color.Transparent;
+            this.btnOpenNotes.CheckedState.Parent = this.btnOpenNotes;
+            this.btnOpenNotes.CustomImages.Parent = this.btnOpenNotes;
+            this.btnOpenNotes.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenNotes.ForeColor = System.Drawing.Color.White;
+            this.btnOpenNotes.HoverState.Parent = this.btnOpenNotes;
+            this.btnOpenNotes.Image = global::Organized_Plurality.Properties.Resources.notepad_picture;
+            this.btnOpenNotes.ImageSize = new System.Drawing.Size(700, 300);
+            this.btnOpenNotes.Location = new System.Drawing.Point(0, 3);
+            this.btnOpenNotes.Name = "btnOpenNotes";
+            this.btnOpenNotes.ShadowDecoration.Parent = this.btnOpenNotes;
+            this.btnOpenNotes.Size = new System.Drawing.Size(594, 203);
+            this.btnOpenNotes.TabIndex = 0;
+            this.btnOpenNotes.Text = "Plural Notes";
+            this.btnOpenNotes.TextFormatNoPrefix = true;
+            this.btnOpenNotes.TextOffset = new System.Drawing.Point(-190, 0);
+            this.btnOpenNotes.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.btnOpenNotes.Click += new System.EventHandler(this.btnOpenNotes_Click);
+            // 
             // menuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 506);
-            this.Controls.Add(this.listMenu);
+            this.ClientSize = new System.Drawing.Size(555, 472);
             this.Controls.Add(this.pnlCtrlBox);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "menuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OP - Menu";
             this.pnlCtrlBox.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -181,11 +212,13 @@ namespace Organized_Plurality
         private Guna.UI2.WinForms.Guna2AnimateWindow animForm;
         private System.Windows.Forms.ImageList imagelist;
         private Guna.UI2.WinForms.Guna2ShadowPanel pnlCtrlBox;
-        private System.Windows.Forms.ListView listMenu;
         private Guna.UI2.WinForms.Guna2DragControl dragForm;
         private Guna.UI2.WinForms.Guna2CircleButton btnMin;
         private Guna.UI2.WinForms.Guna2CircleButton btnClose;
         private Guna.UI2.WinForms.Guna2CircleButton btnSettings;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button btnOpenNotes;
+        private Guna.UI2.WinForms.Guna2Button btnOpenRPC;
     }
 }
 

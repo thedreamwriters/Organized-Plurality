@@ -17,43 +17,6 @@ namespace Organized_Plurality
             InitializeComponent();
         }
 
-        void funcDeselectItem()
-        {
-            listMenu.SelectedItems[0].Selected = false;
-        }
-
-        private void listMenu_ItemActivate(object sender, EventArgs e)
-        {
-            if (listMenu.SelectedItems[0].Index == 0)
-            {
-                var notesFormAction = Application.OpenForms.OfType<notesForm>();
-
-                if (notesFormAction.Any())
-                {
-                    if (notesFormAction.First().WindowState == FormWindowState.Minimized)
-                    {
-                        notesFormAction.First().WindowState = FormWindowState.Normal;
-                    }
-                    else
-                    {
-                        notesFormAction.First().Focus();
-                        funcDeselectItem();
-                    }
-                }
-                else
-                {
-                    notesForm notesForm = new notesForm();
-                    notesForm.Show();
-                    funcDeselectItem();
-                }
-            }
-            else if (listMenu.SelectedItems[0].Index == 1)
-            {
-                MessageBox.Show("Coming soon!", "Discord RPC");
-                funcDeselectItem();
-            }
-        }
-
         private void btnSettings_Click(object sender, EventArgs e)
         {
             var settingsFormAction = Application.OpenForms.OfType<settingsForm>();
@@ -84,6 +47,51 @@ namespace Organized_Plurality
         private void btnMin_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnOpenNotes_Click(object sender, EventArgs e)
+        {
+            var notesFormAction = Application.OpenForms.OfType<notesForm>();
+
+            if (notesFormAction.Any())
+            {
+                if (notesFormAction.First().WindowState == FormWindowState.Minimized)
+                {
+                    notesFormAction.First().WindowState = FormWindowState.Normal;
+                }
+                else
+                {
+                    notesFormAction.First().Focus();
+                }
+            }
+            else
+            {
+                notesForm notesForm = new notesForm();
+                notesForm.Show();
+            }
+        }
+
+        private void btnOpenRPC_Click(object sender, EventArgs e)
+        {
+            var rpcFormAction = Application.OpenForms.OfType<rpcForm>();
+
+            if (rpcFormAction.Any())
+            {
+                if (rpcFormAction.First().WindowState == FormWindowState.Minimized)
+                {
+                    rpcFormAction.First().WindowState = FormWindowState.Normal;
+                }
+                else
+                {
+                    rpcFormAction.First().Focus();
+                }
+            }
+            else
+            {
+                rpcForm rpcForm = new rpcForm();
+                rpcForm.Show();
+
+            }
         }
     }
 }

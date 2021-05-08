@@ -20,3 +20,9 @@ C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Cy
 C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\H.MaterialSkin.dll
 C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\H.MaterialSkin.xml
 C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized Plurality.csprojAssemblyReference.cache
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\DiscordRPC.dll
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\DiscordRPC.pdb
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\DiscordRPC.xml
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Alice\source\repos\Organized Plurality\Organized Plurality\obj\Debug\Organized_Plurality.rpcForm.resources
